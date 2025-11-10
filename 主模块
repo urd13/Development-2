@@ -1,1 +1,34 @@
-
+#include<stdio.h>
+struct Student { 
+    int id; 
+    char name[50];
+};
+struct Grade {
+    int studentId; 
+    char course[50]; 
+    double score; 
+};
+bool running;
+// 主程序
+int main() {
+    loadData();        // 加载数据
+    login();        // 登录
+    
+    while (running) {
+        showMenu();    // 显示菜单
+        switch (option) {
+        case 1:
+            manageStudents();
+            break;
+        case 2: 
+            manageGrades();
+            break;
+        case 3: 
+            showRankings(); 
+            break;
+        case 4:
+            saveData(); 
+            break;
+        }
+    }
+}
